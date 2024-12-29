@@ -58,7 +58,7 @@ def check_emailpass(emailpass):
     return
 
 banner()
-with open('emails.txt', 'r') as file:
+with open('tiktok.txt', 'r') as file:
     emails = file.readlines()
     with concurrent.futures.ThreadPoolExecutor(max_workers=100) as executor:
         results = list(executor.map(check_emailpass, emails))
