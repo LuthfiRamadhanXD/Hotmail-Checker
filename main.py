@@ -58,7 +58,8 @@ def check_emailpass(emailpass):
     return
 
 banner()
-with open('tiktok.txt', 'r') as file:
-    emails = file.readlines()
+with open("yahoo_cok.txt", "r") as f:
+       for line in f:
+         cookies = eval(line.strip())
     with concurrent.futures.ThreadPoolExecutor(max_workers=100) as executor:
         results = list(executor.map(check_emailpass, emails))
